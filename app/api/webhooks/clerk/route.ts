@@ -8,10 +8,8 @@ export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
 
   const rawBody = await req.text();
- 
 
   console.log("Raw webhook body:", rawBody);
- 
 
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
@@ -47,7 +45,7 @@ export async function POST(req: Request) {
 
   // Verify the payload with the headers
   try {
-    evt = wh.verify(body, {
+    evt = wh.verify(rawBody, {
       "svix-id": svix_id,
       "svix-timestamp": svix_timestamp,
       "svix-signature": svix_signature,
