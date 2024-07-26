@@ -8,10 +8,10 @@ export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
 
   const rawBody = await req.text();
-  const payload = await req.json();
+ 
 
   console.log("Raw webhook body:", rawBody);
-  console.log("Parsed webhook body:", payload);
+ 
 
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
 
   // Log the raw body for debugging
 
-  const body = JSON.stringify(payload);
+  const body = JSON.stringify(rawBody);
 
   // Create a new Svix instance with your secret.
   const wh = new Webhook(WEBHOOK_SECRET);
