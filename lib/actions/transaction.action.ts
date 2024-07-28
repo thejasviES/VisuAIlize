@@ -39,7 +39,10 @@ export async function createOrder(
   }
 }
 
-export async function verifyPayment(params: VerifyPaymentParams, buyerId: string) {
+export async function verifyPayment(
+  params: VerifyPaymentParams,
+  buyerId: string
+) {
   try {
     await connectToDatabase();
 
@@ -60,13 +63,13 @@ export async function verifyPayment(params: VerifyPaymentParams, buyerId: string
 
     // Update user's credits
 
-    const updatedUserCredits = await User.findOneAndUpdate(
-      { _id: buyerId },
-      { $inc: { creditBalance: transaction.credits } },
-      { new: true }
-    );
-    console.log("updatedUserCredits", updatedUserCredits);
-    if (!updatedUserCredits) throw new Error("User credits update failed");
+    // const updatedUserCredits = await User.findOneAndUpdate(
+    //   { _id: buyerId },
+    //   { $inc: { creditBalance: transaction.credits } },
+    //   { new: true }
+    // );
+    // console.log("updatedUserCredits", updatedUserCredits);
+    // if (!updatedUserCredits) throw new Error("User credits update failed");
 
     return { sucess: true };
   } catch (error) {
