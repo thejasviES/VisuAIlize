@@ -44,9 +44,9 @@ export const navLinks = [
 export const plans = [
   {
     _id: 1,
-    name: "Free",
+    name: "Basic Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 0,
+    price: 1000,
     credits: 20,
     inclusions: [
       {
@@ -71,7 +71,7 @@ export const plans = [
     _id: 2,
     name: "Pro Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 40,
+    price: 3000,
     credits: 120,
     inclusions: [
       {
@@ -96,7 +96,7 @@ export const plans = [
     _id: 3,
     name: "Premium Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 199,
+    price: 10000,
     credits: 2000,
     inclusions: [
       {

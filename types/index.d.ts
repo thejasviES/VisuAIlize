@@ -72,21 +72,39 @@ declare type Transformations = {
 };
 
 // ====== TRANSACTION PARAMS
-declare type CheckoutTransactionParams = {
-  plan: string;
-  credits: number;
-  amount: number;
-  buyerId: string;
-};
 
-declare type CreateTransactionParams = {
-  stripeId: string;
-  amount: number;
-  credits: number;
-  plan: string;
+
+
+declare type CreateOrderParams ={
   buyerId: string;
-  createdAt: Date;
-};
+  amount: number;
+  plan: string;
+  credits: number;
+  orderId: string;
+}
+
+ declare type VerifyPaymentParams ={
+  orderId: string;
+  paymentId: string;
+  paymentMethod: string;
+  paymentDetails: any;
+}
+
+// declare type CheckoutTransactionParams = {
+//   plan: string;
+//   credits: number;
+//   amount: number;
+//   buyerId: string;
+// };
+
+// declare type CreateTransactionParams = {
+//   stripeId: string;
+//   amount: number;
+//   credits: number;
+//   plan: string;
+//   buyerId: string;
+//   createdAt: Date;
+// };
 
 declare type TransformationTypeKey =
   | "restore"

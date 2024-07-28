@@ -224,9 +224,11 @@
   }
 
   .home-heading {
-    @apply h1-semibold max-w-[500px] flex-wrap text-center text-white shadow-sm;
+    @apply h1-semibold  flex-wrap text-left text-white shadow-sm;
   }
-
+.home-heading1{
+    @apply h3-bold  flex-wrap text-left text-white shadow-sm;
+}
   /* Credits Page */
   .credits-list {
     @apply mt-11 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-9 xl:grid-cols-3;
